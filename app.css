@@ -72,13 +72,14 @@ header {
     color:var(--generic-text-color);
 }
 
-/* #theme-selector p{
-    text-align:right;
+#theme-selector {
+    display:flex;
+    align-items: center;
 }
 
 #theme-selector span {
-    font-size:0.7rem;
-} */
+    margin-right:0.5em;
+}
 
 .switcher {
     background-color:var(--calculator-bg-color);
