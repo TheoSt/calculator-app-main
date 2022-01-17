@@ -1,0 +1,233 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Spartan', sans-serif;
+}
+
+.first-theme {
+    --body-bg-color:hsl(222, 26%, 31%);
+    --generic-text-color:white;
+    --screen-bg-color:hsl(224, 36%, 15%);
+    --calculator-bg-color:hsl(223, 31%, 20%);
+    --buttons-bg-color:hsl(30, 25%, 89%);
+    --buttons-color:hsl(221, 14%, 31%);
+    --del-bg-color:hsl(225, 21%, 49%);
+    --equal-bg-color:hsl(6, 63%, 50%);
+    --button-shadow:hsl(28, 16%, 65%);
+    --equal-shadow:hsl(6, 70%, 34%);
+    --del-shadow:hsl(224, 28%, 35%);
+}
+
+.second-theme {
+    --body-bg-color:hsl(0, 0%, 90%);
+    --generic-text-color:black;
+    --screen-bg-color:hsl(0, 0%, 93%);
+    --calculator-bg-color:hsl(0, 5%, 81%);
+    --buttons-bg-color:hsl(45, 7%, 89%);
+    --buttons-color:hsl(60, 10%, 19%);
+    --del-bg-color:hsl(185, 42%, 37%);
+    --equal-bg-color:hsl(25, 98%, 40%);
+    --button-shadow:hsl(35, 11%, 61%);
+    --equal-shadow:hsl(25, 99%, 27%);
+    --del-shadow:hsl(185, 58%, 25%);
+
+    --white-color:white;
+}
+
+.third-theme {
+    --body-bg-color:hsl(268, 75%, 9%);
+    --generic-text-color:hsl(52, 100%, 62%);
+    --screen-bg-color:hsl(268, 71%, 12%);
+    --calculator-bg-color:hsl(268, 71%, 12%);
+    --buttons-bg-color:hsl(268, 47%, 21%);
+    --buttons-color:hsl(52, 100%, 62%);
+    --del-bg-color:hsl(281, 89%, 26%);
+    --equal-bg-color:hsl(176, 100%, 44%);
+    --button-shadow:hsl(290, 70%, 36%);
+    --equal-shadow:hsl(177, 92%, 70%);
+    --del-shadow:hsl(285, 91%, 52%);
+
+    --del-color:white;
+    --equal-color:hsl(198, 20%, 13%);
+}
+
+body {
+    background-color:var(--body-bg-color);
+}
+
+main {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+#container {
+    width:90%;
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    color:var(--generic-text-color);
+}
+
+/* #theme-selector p{
+    text-align:right;
+}
+
+#theme-selector span {
+    font-size:0.7rem;
+} */
+
+.switcher {
+    background-color:var(--calculator-bg-color);
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    border-radius:50px;
+    height:20px;
+    width:55px;
+    padding:1px 5px;
+    position:relative;
+}
+
+.ball {
+    height:15px;
+    width:15px;
+    transform: translateY(50%,50%);
+    border-radius:50%;
+    background-color:var(--equal-bg-color);
+    position:absolute;
+    transition:all 0.2s;
+}
+
+#second-thm:checked ~ .ball {
+    transform:translateX(20px);
+}
+
+#third-thm:checked ~ .ball {
+    transform:translateX(40px);
+}
+
+.theme-selector {
+    opacity:0;
+}
+
+
+#screen {
+    color:var(--generic-text-color);
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    height:5vh;
+    background-color:var(--screen-bg-color);
+    padding:1em;
+    margin:2em 0;
+}
+
+#screen span {
+    font-size:1.5rem;
+}
+
+#calculator {
+    background-color:var(--calculator-bg-color);
+}
+
+#buttons {
+   display:grid;
+   grid-template-columns:auto auto auto auto;
+   gap:10px;
+   padding:1em;
+}
+
+.calc-button {
+    color: var(--buttons-color);
+    background-color:var(--buttons-bg-color);
+    font-weight: 700;
+    font-size:1.8rem;
+    display:block;
+    margin:0 auto;
+    border:none;
+    border-radius:5px;
+    padding:0.5em;
+    width:100%;
+    box-shadow: 0px 3px 1px var(--button-shadow);
+}
+
+.calc-button:active {
+    transform:translateY(3px);
+    box-shadow:none;
+}
+
+.remove-btns {
+    background-color:var(--del-bg-color);
+    color:var(--generic-text-color);
+    box-shadow: 0px 3px 1px var(--del-shadow);
+}
+
+html[class="second-theme"] .remove-btns, 
+html[class="second-theme"] #equal-button button {
+    color:var(--white-color);
+}
+
+html[class="third-theme"] .remove-btns {
+    color:var(--del-color);
+}
+
+html[class="third-theme"] #equal-button button {
+    color:var(--equal-color);
+}
+
+.remove-btns:active, #equal-button button:active {
+    transform:translateY(3px);
+    box-shadow:none;
+}
+
+
+#del-button button {
+    text-transform: uppercase;
+    padding:1.4rem 0.5rem;
+    font-size:1rem;
+}
+
+#rst-button {
+    grid-column:1/-3;
+}
+
+#rst-button button {
+    text-transform:uppercase;
+    font-size:1rem;
+    padding:1rem 0;  
+}
+
+#equal-button {
+    grid-column:3/-1;
+}
+
+#equal-button button {
+    background-color:var(--equal-bg-color);
+    color:var(--generic-text-color);
+    font-size:1rem;
+    padding:1rem 0;
+    box-shadow: 0px 3px 1px var(--equal-shadow);
+}
+
+
+@media screen and (min-width:768px) {
+    #container {
+        width:50%;
+    }
+}
+
+@media screen and (min-width:900px) {
+    #container {
+        width:30%;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    #container {
+        width:20%;
+    }
+}

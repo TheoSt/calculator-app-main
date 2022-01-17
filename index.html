@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">  
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+  <main>
+    <section id="container">
+      <header>
+        <h1>calc</h1>
+        <div id="theme-selector">
+          <div class="switcher">
+            <input type="radio" id="first-thm" class="theme-selector" name="theme-switcher" data-theme="1" checked>
+            <input type="radio" id="second-thm" class="theme-selector" name="theme-switcher" data-theme="2">
+            <input type="radio" id="third-thm" class="theme-selector" name="theme-switcher" data-theme="3">
+            <div class="ball"></div>
+          </div>
+         <!--  <p>
+            <span>1</span>
+            <span>2</span> 
+            <span>3</span>  
+          </p>
+          <span>theme</span>
+          <input class="theme-selector" type="radio" name="theme-switcher" data-theme="1">
+          <input class="theme-selector" type="radio" name="theme-switcher" data-theme="2">
+          <input class="theme-selector" type="radio" name="theme-switcher" data-theme="3"> 
+        -->
+        </div>
+      </header>
+      <div id="screen">
+        <span id="screen-display">0</span>
+      </div>
+      <div id="calculator">
+        <div id="buttons">
+          <div class="grid-item">
+            <button class="calc-button" data-button="7">7</button>
+          </div>
+          <div class="grid-item">
+            <button class="calc-button" data-button="8">8</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-button="9">9</button>
+          </div>
+          <div id="del-button" class="grid-item">
+            <button class="remove-btns calc-button" data-operation="del">del</button>
+          </div>
+          <div class="grid-item">
+            <button class="calc-button" data-button="4">4</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-button="5">5</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-button="6">6</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-operation="+">+</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-button="1">1</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-button="2">2</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-button="3">3</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-operation="-">-</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-button=".">.</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-button="0">0</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-operation="/">/</button>
+          </div>
+          <div class="grid-item">
+            <button class=" calc-button" data-operation="x">x</button>
+          </div>
+          <div id="rst-button" class="grid-item">
+            <button class="remove-btns calc-button" data-operation="reset">reset</button>
+          </div>
+          <div id="equal-button" class="grid-item">
+            <button class=" calc-button" data-operation="=">=</button>
+          </div>  
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--  -->
+
+<!--   
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="app.js"></script>
+</body>
+</html>
